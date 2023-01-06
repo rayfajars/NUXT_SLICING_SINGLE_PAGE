@@ -3,7 +3,7 @@
     <div class="grid md:grid-cols-2">
       <div class="flex h-[800px] w-full bg-[#F6F6FB]">
         <div class="m-auto">
-          <div class="px-[200px]">
+          <div class="px-[100px]">
             <div
               class="relative mb-12 h-16 w-16 items-center justify-center rounded-full bg-purple-700 p-5 text-center text-6xl shadow-xl"
             >
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="m-auto">
-        <div class="px-[100px]">
+        <div class="px-[100px] xl:px-[100px]">
           <div class="text-center">
             <h3 class="text-3xl font-semibold mb-7 px-24">
               Help us improve our productivity

@@ -1,6 +1,6 @@
 <template>
   <header class="pt-12">
-    <div class="container">
+    <div class="md:container">
       <div class="flex items-center justify-between">
         <nav class="flex items-center gap-10">
           <div
