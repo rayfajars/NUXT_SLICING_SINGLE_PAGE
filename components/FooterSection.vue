@@ -44,8 +44,74 @@
           </div>
 
           <hr class="w-[400px] mx-auto my-10 bg-gray-100 border-1 rounded" />
+
+          <div>
+            <slick
+              ref="slick"
+              :options="slickOptions"
+            >
+              <a href="https://source.unsplash.com/360x200?mechanical+keyboard"
+                ><img
+                  src="https://source.unsplash.com/360x200?mechanical+keyboard"
+                  alt=""
+              /></a>
+              <a href="https://source.unsplash.com/360x200?mechanical+keyboard"
+                ><img
+                  src="https://source.unsplash.com/360x200?mechanical+keyboard"
+                  alt=""
+              /></a>
+              <a href="https://source.unsplash.com/360x200?mechanical+keyboard"
+                ><img
+                  src="https://source.unsplash.com/360x200?mechanical+keyboard"
+                  alt=""
+              /></a>
+              <a href="https://source.unsplash.com/360x200?mechanical+keyboard"
+                ><img
+                  src="https://source.unsplash.com/360x200?mechanical+keyboard"
+                  alt=""
+              /></a>
+              <a href="https://source.unsplash.com/360x200?mechanical+keyboard"
+                ><img
+                  src="https://source.unsplash.com/360x200?mechanical+keyboard"
+                  alt=""
+              /></a>
+            </slick>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+import Slick from 'vue-slick'
+
+export default {
+  components: {
+    Slick,
+  },
+  data() {
+    return {
+      slickOptions: {
+        slidesToShow: 3,
+        // Any other options that can be got from plugin documentation
+      },
+    }
+  },
+
+  // All slick methods can be used too, example here
+  methods: {
+    next() {
+      this.$refs.slick.next()
+    },
+
+    prev() {
+      this.$refs.slick.prev()
+    },
+  },
+}
+</script>
+
+<style>
+@import 'slick-carousel/slick/slick.css';
+</style>

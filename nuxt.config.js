@@ -21,7 +21,7 @@ export default {
   css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: './plugins/slick.js' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -38,6 +38,15 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, { isServer }) {
+      if (isServer) {
+        config.externals = [
+          require('webpack-node-externals')({
+            whitelist: [/^vue-slick/],
+          }),
+        ]
+      }
+    },
     postcss: {
       plugins: {
         tailwindcss: {},
