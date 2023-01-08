@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="m-auto">
-        <div class="px-[100px] xl:px-[200px]">
+        <div class="px-[100px]">
           <div class="text-center">
             <h3 class="text-3xl font-semibold mb-7 px-24">
               Help us improve our productivity
@@ -44,8 +44,44 @@
           </div>
 
           <hr class="w-[400px] mx-auto my-10 bg-gray-100 border-1 rounded" />
+
+          <div class="carousel-wrapper mx-auto">
+            <carousel v-bind="options">
+              <slide v-for="i in 10" :key="i">
+                <div class="flex flex-wrap justify-center">
+                  <img
+                    :src="`./images/${i}.jpg`"
+                    alt="..."
+                    class="shadow rounded-full w-20 h-20 align-middle border-none"
+                  />
+                </div>
+                <div class="text-center">
+                  <h5 class="font-bold text-md">Lorem, ipsum.</h5>
+                  <p class="font-light text-sm">Lorem ipsum dolor sit.</p>
+                </div>
+              </slide>
+            </carousel>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      options: {
+        loop: true,
+        perPage: 5,
+        paginationEnabled: false,
+        autoplay: true,
+        centerMode: true,
+        scrollPerPage: false,
+        spacePadding:5,
+      },
+    }
+  },
+}
+</script>
