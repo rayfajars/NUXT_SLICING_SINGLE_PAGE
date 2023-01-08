@@ -43,9 +43,150 @@
             </p>
           </div>
 
-          <hr class="w-[400px] mx-auto my-10 bg-gray-100 border-1 rounded" />
+          <hr class="w-[400px] mx-auto my-8 bg-gray-100 border-1 rounded" />
+
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div
+                v-for="(imageSrc, index) in listImageWorkingSpace"
+                :key="index"
+                class="swiper-slide"
+                :class="`slide--${index}`"
+              >
+                <div class="slider-content">
+                  <div>
+                    <img :src="imageSrc.src" class="rounded-full" />
+                  </div>
+                  <div class="text-center text-swiper mt-6">
+                    <h4 class="font-bold text-sm">Lorem Saliba</h4>
+                    <p class="font-light text-xs">Lorem, ipsum {{ index }}.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+// import Swiper JS
+// add or remove unused modules
+import { Swiper, Navigation, Pagination, Autoplay } from 'swiper'
+import 'swiper/swiper-bundle.min.css'
+export default {
+  data() {
+    return {
+      listImageWorkingSpace: [
+        { src: 'images/1.jpg' },
+        { src: 'images/2.jpg' },
+        { src: 'images/3.jpg' },
+        { src: 'images/4.jpg' },
+        { src: 'images/5.jpg' },
+        { src: 'images/6.jpg' },
+      ],
+    }
+  },
+  mounted() {
+    // configure Swiper to use modules. The modules were tested with SwiperJS v6.8.4 with NuxtJS v2.15.7
+    // previously it was before export default. Moved here for performance issues. Move back in case of problems.
+    // add or remove unused modules
+    Swiper.use([Navigation, Pagination, Autoplay])
+
+    // init Swiper:
+    /* eslint-disable no-unused-vars */
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      // @see https://swiperjs.com/swiper-api#parameters
+      direction: 'horizontal',
+      loop: true,
+      // remove unused modules if needed
+      modules: [Navigation, Pagination, Autoplay],
+      // Pagination if needed
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      loopFillGroupWithBlank: false,
+      slidesPerView: 5,
+      slidesPerGroup: 1,
+      centeredSlides: true,
+      // Autoplay if needed
+      autoplay: {
+        delay: 5000,
+      },
+      // Navigation arrows if needed
+      navigation: {
+        nextEl: '',
+        prevEl: '',
+      },
+      // Configure other options. Not tested
+    })
+  },
+}
+</script>
+
+<style scoped>
+.swiper {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+}
+.swiper-slide {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide {
+  /* filter: blur(1px); */
+  @apply !blur-[2px];
+}
+
+.swiper-slide-active {
+  @apply !blur-none;
+}
+
+.swiper-slide-active .slider-content img {
+  @apply !h-24 !w-24;
+}
+
+.swiper-slide-next {
+  @apply !blur-[1px];
+}
+
+.swiper-slide-next .slider-content img,
+.swiper-slide-prev .slider-content img {
+  @apply !h-20 !w-20;
+}
+
+.swiper-slide-next .slider-content .text-swiper,
+.swiper-slide-prev .slider-content .text-swiper {
+  @apply !invisible;
+}
+
+.swiper-slide-prev {
+  @apply !blur-[1px];
+}
+
+.swiper-slide .slider-content img {
+  /* filter: blur(1px); */
+  @apply h-12 w-12;
+}
+
+.swiper-slide .slider-content .text-swiper {
+  /* filter: blur(1px); */
+  @apply invisible;
+}
+
+.swiper-slide-active .slider-content .text-swiper {
+  @apply !visible;
+}
+</style>
