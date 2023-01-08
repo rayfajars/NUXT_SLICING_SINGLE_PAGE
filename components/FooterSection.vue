@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="m-auto">
-        <div class="px-[100px] xl:px-[200px]">
+        <div class="px-[100px]">
           <div class="text-center">
             <h3 class="text-3xl font-semibold mb-7 px-24">
               Help us improve our productivity
