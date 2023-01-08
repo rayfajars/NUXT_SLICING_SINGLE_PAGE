@@ -1,5 +1,5 @@
 <template>
-  <section class="my-[150px]">
+  <section class="my-[100px]">
     <div class="container">
       <div class="grid md:grid-cols-2">
         <div class="h-[800px] flex">

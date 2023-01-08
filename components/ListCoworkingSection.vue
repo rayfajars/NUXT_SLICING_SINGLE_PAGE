@@ -1,5 +1,5 @@
 <template>
-  <section class="my-[150px]">
+  <section class="my-[100px]">
     <div class="container">
       <div class="w-full">
         <h2 class="text-3xl font-bold">Ruang Kerja di dekatmu</h2>
