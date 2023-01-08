@@ -72,7 +72,7 @@
   </section>
 </template>
 
-<script>
+<script scoped>
 // import Swiper JS
 // add or remove unused modules
 import { Swiper, Navigation, Pagination, Autoplay } from 'swiper'
@@ -112,7 +112,7 @@ export default {
       },
       loopFillGroupWithBlank: false,
       slidesPerView: 5,
-      slidesPerGroup: 1,
+      // slidesPerGroup: 1,
       centeredSlides: true,
       // Autoplay if needed
       autoplay: {
@@ -161,7 +161,7 @@ export default {
 
 .swiper-slide-next .slider-content img,
 .swiper-slide-prev .slider-content img {
-  @apply !h-16 !w-16;
+  @apply !h-20 !w-20;
 }
 
 .swiper-slide-next .slider-content .text-swiper,

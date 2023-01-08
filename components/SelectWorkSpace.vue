@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="mt-20">
-      <div class="swiper">
+      <div class="swiper swiper-workspace">
         <div class="swiper-wrapper">
           <div
             v-for="(imageSrc, index) in listImageWorkingSpace"
@@ -28,7 +28,7 @@
             class="swiper-slide"
             :class="`slide--${index}`"
           >
-            <div class="slider-content pr-10">
+            <div class="slider-content mr-5">
               <div>
                 <img :src="imageSrc.src" class="rounded-lg" />
               </div>
@@ -51,7 +51,7 @@
   </section>
 </template>
 
-<script>
+<script scoped>
 import { Swiper, Navigation, Pagination, Autoplay } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
@@ -77,7 +77,7 @@ export default {
 
     // init Swiper:
     /* eslint-disable no-unused-vars */
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.swiper-workspace', {
       // Optional parameters
       // @see https://swiperjs.com/swiper-api#parameters
       direction: 'horizontal',
@@ -92,7 +92,9 @@ export default {
       loopFillGroupWithBlank: false,
       slidesPerView: 5,
       slidesPerGroup: 1,
-      spaceBetween: 30,
+      slidesOffsetAfter:100,
+      slidesOffsetBefore:100,
+      
       // Autoplay if needed
       autoplay: {
         delay: 3000,
@@ -107,3 +109,14 @@ export default {
   },
 }
 </script>
+
+
+<style scoped>
+
+.swiper-container {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+}
+</style>
