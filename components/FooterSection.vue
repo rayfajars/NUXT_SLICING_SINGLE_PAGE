@@ -64,10 +64,7 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div> -->
+    
           </div>
         </div>
       </div>
@@ -84,12 +81,12 @@ export default {
   data() {
     return {
       listImageWorkingSpace: [
-        { src: 'images/1.jpg' },
-        { src: 'images/2.jpg' },
-        { src: 'images/3.jpg' },
-        { src: 'images/4.jpg' },
-        { src: 'images/5.jpg' },
-        { src: 'images/6.jpg' },
+        { src: 'profile/1.jpg' },
+        { src: 'profile/2.jpg' },
+        { src: 'profile/3.jpg' },
+        { src: 'profile/4.jpg' },
+        { src: 'profile/5.jpg' },
+        { src: 'profile/6.jpg' },
       ],
     }
   },
@@ -164,7 +161,7 @@ export default {
 
 .swiper-slide-next .slider-content img,
 .swiper-slide-prev .slider-content img {
-  @apply !h-20 !w-20;
+  @apply !h-16 !w-16;
 }
 
 .swiper-slide-next .slider-content .text-swiper,
