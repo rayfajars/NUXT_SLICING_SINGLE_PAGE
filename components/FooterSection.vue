@@ -64,7 +64,6 @@
                 </div>
               </div>
             </div>
-    
           </div>
         </div>
       </div>
@@ -142,6 +141,11 @@ export default {
   justify-content: center;
 }
 
+.swiper-slide-prev,
+.swiper-slide-next {
+  @apply !blur-[1px];
+}
+
 .swiper-slide {
   /* filter: blur(1px); */
   @apply !blur-[2px];
@@ -150,13 +154,8 @@ export default {
 .swiper-slide-active {
   @apply !blur-none;
 }
-
 .swiper-slide-active .slider-content img {
   @apply !h-24 !w-24;
-}
-
-.swiper-slide-next {
-  @apply !blur-[1px];
 }
 
 .swiper-slide-next .slider-content img,
@@ -164,26 +163,22 @@ export default {
   @apply !h-20 !w-20;
 }
 
-.swiper-slide-next .slider-content .text-swiper,
-.swiper-slide-prev .slider-content .text-swiper {
-  @apply !invisible;
-}
-
-.swiper-slide-prev {
-  @apply !blur-[1px];
-}
-
 .swiper-slide .slider-content img {
   /* filter: blur(1px); */
   @apply h-12 w-12;
 }
 
+.swiper-slide-active .slider-content .text-swiper {
+  @apply !visible;
+}
+
+.swiper-slide-next .slider-content .text-swiper,
+.swiper-slide-prev .slider-content .text-swiper {
+  @apply !invisible;
+}
+
 .swiper-slide .slider-content .text-swiper {
   /* filter: blur(1px); */
   @apply invisible;
-}
-
-.swiper-slide-active .slider-content .text-swiper {
-  @apply !visible;
 }
 </style>
