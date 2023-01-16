@@ -111,7 +111,6 @@ export default {
       },
       loopFillGroupWithBlank: false,
       slidesPerView: 5,
-      // slidesPerGroup: 1,
       centeredSlides: true,
       // Autoplay if needed
       autoplay: {

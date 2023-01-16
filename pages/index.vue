@@ -1,9 +1,11 @@
 <template>
   <div>
+    <NavbarSection />
     <HeroSection />
     <SelectWorkSpace />
     <InfoSection />
     <ListCoworkingSection />
+    <FooterSection />
   </div>
 </template>
 
